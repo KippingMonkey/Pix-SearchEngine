@@ -7,13 +7,13 @@
   box-sizing: border-box;
 
   /* ==== visual aid when editing layout ==== */
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 /* =============== custom properties =============== */
 :root {
   --color-darkgrey: #282828;
-  --color-lightgrey: #a9a9a9;
+  --color-lightgrey: #bcbcbc;
 
   --ff-body-text: "Manrope", sans-serif;
 }
@@ -31,8 +31,7 @@ input {
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
-  margin-top: 30vh;
-  background-color: aqua;
+  margin-top: 25vh;
 }
 #pb-logo {
   width: 50%;
@@ -40,67 +39,84 @@ input {
 }
 @media (max-width: 800px) {
   #pb-logo {
-    width: 70%;
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  #pb-logo {
+    width: 75%;
   }
 }
 
-/* =============== toolbar =============== */
-.toolbar-container {
+/* =============== toolbar/form =============== */
+.toolbar-form {
   display: flex;
   justify-content: center;
-  background-color: burlywood;
+  flex-wrap: wrap;
 }
 .toolbar {
-  margin: 0 3px;
+  margin: 0 4px;
 }
 #searchfield {
+  width: 35%;
   font-size: 1.2rem;
   color: var(--color-lightgrey);
   padding: 3px 5px 1px 20px;
   border: 1px solid var(--color-lightgrey);
   border-radius: 999px;
 }
-#plus {
+#paintbrush {
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--color-lightgrey);
   background-color: white;
   border: 1px solid var(--color-lightgrey);
   border-radius: 50%;
 }
-/* =============== toolbar magnifying glass =============== */
-.mglass-container {
+#magGlass {
   width: 2.5rem;
   height: 2.5rem;
+  font-size: 1.4rem;
+  color: var(--color-lightgrey);
   background-color: white;
   border: 1px solid var(--color-lightgrey);
   border-radius: 50%;
 }
-.ico-mglass {
-  position: relative;
-  display: inline-block;
-  background: #fff;
-  border-radius: 30px;
-  height: 6px;
-  width: 6px;
-  border: 2px solid #888;
+@media (max-width: 800px) {
+  #searchfield {
+    width: 50%;
+    font-size: 0.9rem;
+    padding: 2px 4px 1px 15px;
+  }
+  #paintbrush,
+  #magGlass {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
 }
-.ico-mglass:after {
-  content: "";
-  height: 2px;
-  width: 6px;
-  background: #888;
-  position: absolute;
-  top: 7px;
-  left: 5px;
-  transform: rotate(45deg);
+@media (max-width: 500px) {
+  #searchfield {
+    width: 250px;
+  }
 }
+
 /* =============== footer =============== */
 footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 50%;
+  left: 25%;
+  right: 25%;
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   color: var(--color-lightgrey);
+}
+@media (max-width: 800px) {
+  footer {
+    font-size: 0.7rem;
+  }
 }
