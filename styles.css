@@ -58,7 +58,8 @@ input {
   margin: 0 4px;
 }
 #searchfield {
-  width: 35%;
+  width: 18rem;
+  height: 2.5rem;
   font-size: 1.2rem;
   color: var(--color-lightgrey);
   padding: 3px 5px 1px 20px;
@@ -100,6 +101,29 @@ input {
   #searchfield {
     width: 250px;
   }
+}
+/* =============== search container =============== */
+.search-container {
+  margin: 1rem 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container.search-active {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.toolbar-form {
+  flex-wrap: nowrap;
+}
+
+.logo-container {
+  margin: 1rem 0 0 1rem;
+  justify-content: flex-start;
+  height: 2.5rem;
+  width: auto;
 }
 
 /* =============== footer =============== */
