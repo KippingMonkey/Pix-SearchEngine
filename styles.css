@@ -1,0 +1,106 @@
+/* =============== deafault css reset =============== */
+* {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* ==== visual aid when editing layout ==== */
+  outline: 1px solid red;
+}
+
+/* =============== custom properties =============== */
+:root {
+  --color-darkgrey: #282828;
+  --color-lightgrey: #a9a9a9;
+
+  --ff-body-text: "Manrope", sans-serif;
+}
+
+/* =============== elements general style =============== */
+p,
+button,
+input {
+  font-family: var(--ff-body-text);
+}
+
+/* =============== pb logo =============== */
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-top: 30vh;
+  background-color: aqua;
+}
+#pb-logo {
+  width: 50%;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  #pb-logo {
+    width: 70%;
+  }
+}
+
+/* =============== toolbar =============== */
+.toolbar-container {
+  display: flex;
+  justify-content: center;
+  background-color: burlywood;
+}
+.toolbar {
+  margin: 0 3px;
+}
+#searchfield {
+  font-size: 1.2rem;
+  color: var(--color-lightgrey);
+  padding: 3px 5px 1px 20px;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 999px;
+}
+#plus {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  color: var(--color-lightgrey);
+  background-color: white;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 50%;
+}
+/* =============== toolbar magnifying glass =============== */
+.mglass-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 50%;
+}
+.ico-mglass {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  border-radius: 30px;
+  height: 6px;
+  width: 6px;
+  border: 2px solid #888;
+}
+.ico-mglass:after {
+  content: "";
+  height: 2px;
+  width: 6px;
+  background: #888;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  transform: rotate(45deg);
+}
+/* =============== footer =============== */
+footer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-lightgrey);
+}
