@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 96vh;
+    height: calc(100vh - 50px);
   }
 
   .logo-container img {
@@ -67,4 +67,3 @@
     height: 3.5rem;
     width: auto;
   }
-
