@@ -1,0 +1,146 @@
+/* =============== deafault css reset =============== */
+* {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* ==== visual aid when editing layout ==== */
+  /* outline: 1px solid red; */
+}
+
+/* =============== custom properties =============== */
+:root {
+  --color-darkgrey: #282828;
+  --color-lightgrey: #bcbcbc;
+
+  --ff-body-text: "Manrope", sans-serif;
+}
+
+/* =============== elements general style =============== */
+p,
+button,
+input {
+  font-family: var(--ff-body-text);
+}
+
+/* =============== pb logo =============== */
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-top: 25vh;
+}
+#pb-logo {
+  width: 50%;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  #pb-logo {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  #pb-logo {
+    width: 75%;
+  }
+}
+
+/* =============== toolbar/form =============== */
+.toolbar-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.toolbar {
+  margin: 0 4px;
+}
+#searchfield {
+  width: 18rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  color: var(--color-lightgrey);
+  padding: 3px 5px 1px 20px;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 999px;
+}
+#paintbrush {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.4rem;
+  color: var(--color-lightgrey);
+  background-color: white;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 50%;
+}
+#magGlass {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.4rem;
+  color: var(--color-lightgrey);
+  background-color: white;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 50%;
+}
+@media (max-width: 800px) {
+  #searchfield {
+    width: 50%;
+    font-size: 0.9rem;
+    padding: 2px 4px 1px 15px;
+  }
+  #paintbrush,
+  #magGlass {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  #searchfield {
+    width: 250px;
+  }
+}
+/* =============== search container =============== */
+.search-container {
+  margin: 1rem 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container.search-active {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.toolbar-form {
+  flex-wrap: nowrap;
+}
+
+.logo-container {
+  margin: 1rem 0 0 1rem;
+  justify-content: flex-start;
+  height: 2.5rem;
+  width: auto;
+}
+
+/* =============== footer =============== */
+footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-lightgrey);
+}
+@media (max-width: 800px) {
+  footer {
+    font-size: 0.7rem;
+  }
+}

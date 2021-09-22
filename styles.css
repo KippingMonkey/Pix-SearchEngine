@@ -1,16 +1,7 @@
-/* =============== deafault css reset =============== */
 * {
-  border: 0;
-  outline: 0;
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
-
-  /* ==== visual aid when editing layout ==== */
-  /* outline: 1px solid red; */
 }
 
-/* =============== custom properties =============== */
 :root {
   --color-darkgrey: #282828;
   --color-lightgrey: #bcbcbc;
@@ -18,129 +9,61 @@
   --ff-body-text: "Manrope", sans-serif;
 }
 
-/* =============== elements general style =============== */
-p,
-button,
-input {
-  font-family: var(--ff-body-text);
+body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
-/* =============== pb logo =============== */
-.logo-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  margin-top: 25vh;
-}
-#pb-logo {
-  width: 50%;
-  text-align: center;
-}
-@media (max-width: 800px) {
-  #pb-logo {
-    width: 60%;
-  }
-}
-@media (max-width: 500px) {
-  #pb-logo {
-    width: 75%;
-  }
-}
-
-/* =============== toolbar/form =============== */
-.toolbar-form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.toolbar {
-  margin: 0 4px;
-}
-#searchfield {
-  width: 18rem;
-  height: 2.5rem;
-  font-size: 1.2rem;
-  color: var(--color-lightgrey);
-  padding: 3px 5px 1px 20px;
-  border: 1px solid var(--color-lightgrey);
-  border-radius: 999px;
-}
-#paintbrush {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.4rem;
-  color: var(--color-lightgrey);
-  background-color: white;
-  border: 1px solid var(--color-lightgrey);
-  border-radius: 50%;
-}
-#magGlass {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.4rem;
-  color: var(--color-lightgrey);
-  background-color: white;
-  border: 1px solid var(--color-lightgrey);
-  border-radius: 50%;
-}
-@media (max-width: 800px) {
-  #searchfield {
-    width: 50%;
-    font-size: 0.9rem;
-    padding: 2px 4px 1px 15px;
-  }
-  #paintbrush,
-  #magGlass {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
-  }
-}
-@media (max-width: 500px) {
-  #searchfield {
-    width: 250px;
-  }
-}
-/* =============== search container =============== */
 .search-container {
-  margin: 1rem 1rem 0 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}
+
+.logo-container img {
+  width: 40rem;
+  height: auto;
+  margin: 0.25rem 1rem;
+}
+
+.toolbar-form {
+  width: 40rem;
+  display: flex;
+  margin: 0.5rem 1rem;
+}
+
+.toolbar-form button {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 50%;
+  color: var(--color-lightgrey);
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+#searchfield {
+  height: 3rem;
+  width: auto;
+  flex-grow: 1;
+  border: 1px solid var(--color-lightgrey);
+  border-radius: 3rem;
+  padding: 0 1rem;
+  font-size: 2rem;
 }
 
 .search-container.search-active {
   flex-direction: row;
   justify-content: space-between;
-  align-items: space-between;
+  align-items: flex-start;
+  height: 4rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 
-.toolbar-form {
-  flex-wrap: nowrap;
-}
-
-.logo-container {
-  margin: 1rem 0 0 1rem;
-  justify-content: flex-start;
-  height: 2.5rem;
+.search-container.search-active .logo-container img {
+  height: 3.5rem;
   width: auto;
-}
-
-/* =============== footer =============== */
-footer {
-  position: absolute;
-  bottom: 2rem;
-  width: 50%;
-  left: 25%;
-  right: 25%;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--color-lightgrey);
-}
-@media (max-width: 800px) {
-  footer {
-    font-size: 0.7rem;
-  }
 }
