@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="images/pb-favicon.png" />
-    <script src="functions.js" async defer></script>
+    <script src="functions.js" defer></script>
     <script src="https://kit.fontawesome.com/1bddcc1339.js" crossorigin="anonymous"></script>
     <title>Pixabay Searchengine</title>
 </head>
@@ -28,7 +28,78 @@
             </div>
             <form class="toolbar-form">
                 <input type="search" name="searchfield" id="searchfield" class="toolbar" placeholder="Search...">
-                <button id="paintbrush" class="toolbar" type="menu"><i class="fas fa-paint-brush fa-2x"></i></button>
+                <div class="dropdown-container">
+                    <button id="paintbrush" class="toolbar" type="menu"><i class="fas fa-paint-brush fa-2x"></i></button>
+                    <div id="dropdown-menu" class="dropdown-content">
+                       <ul id="color-list">
+                        <li>
+                            <input type="radio" name="color_codes" value="1" id="grayscale">
+                            <label for="grayscale">grayscale</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="2" id="transparent">
+                            <label for="transparent">transparent</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="3" id="red">
+                            <label for="red">red</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="4" id="orange">
+                            <label for="orange">orange</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="5" id="green">
+                            <label for="green">green</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="6" id="turquoise">
+                            <label for="turquoise">turquoise</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="7" id="blue">
+                            <label for="blue">blue</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="8" id="lilac">
+                            <label for="lilac">lilac</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="9" id="pink">
+                            <label for="pink">pink</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="10" id="white">
+                            <label for="white">white</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="11" id="gray">
+                            <label for="gray">gray</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="12" id="black">
+                            <label for="black">black</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="13" id="brown">
+                            <label for="brown">brown</label>
+                        </li>
+                           <!-- <a href="" id="1">grayscale</a>
+                           <a href="" id="2">transparent</a>
+                           <a href="" id="3">red</a>
+                           <a href="" id="4">orange</a>
+                           <a href="" id="5">green</a>
+                           <a href="" id="6">turquoise</a>
+                           <a href="" id="7">blue</a>
+                           <a href="" id="8">lilac</a>
+                           <a href="" id="9">pink</a>
+                           <a href="" id="10">white</a>
+                           <a href="" id="11">gray</a>
+                           <a href="" id="12">black</a>
+                           <a href="" id="13">brown</a> -->
+                       </ul>
+                    </div>
+                </div>
                 <button id="magGlass" type="submit"><i class="fas fa-search fa-2x"></i></button>
             </form>
         </div>
