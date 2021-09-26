@@ -24,7 +24,69 @@
             </div>
             <form id="toolbar-form" autocomplete="off">
                 <input  id="searchfield" type="search" name="searchfield"  class="toolbar" placeholder="Search...">
-                <button id="paintbrush" type="menu" class="toolbar" ><i class="fas fa-paint-brush fa-2x"></i></button>
+                <div class="dropdown-container">
+                    <button id="paintbrush" class="toolbar" type="menu"><i class="fas fa-paint-brush fa-2x"></i></button>
+                    <div id="dropdown-menu" class="dropdown-content">
+                       <ul id="color-list">
+                        <li>
+                            <input type="radio" name="color_codes" value="0" id="any-color">
+                            <label class="c-label" for="any-color">any color</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="1" id="grayscale">
+                            <label class="c-label" for="grayscale">grayscale</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="2" id="transparent">
+                            <label class="c-label" for="transparent">transparent</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="3" id="red">
+                            <label class="c-label" for="red">red</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="4" id="orange">
+                            <label class="c-label" for="orange">orange</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="5" id="green">
+                            <label class="c-label" for="green">green</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="6" id="turquoise">
+                            <label class="c-label" for="turquoise">turquoise</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="7" id="blue">
+                            <label class="c-label" for="blue">blue</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="8" id="lilac">
+                            <label class="c-label" for="lilac">lilac</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="9" id="pink">
+                            <label class="c-label" for="pink">pink</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="10" id="white">
+                            <label class="c-label" for="white">white</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="11" id="gray">
+                            <label class="c-label" for="gray">gray</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="12" id="black">
+                            <label class="c-label" for="black">black</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="color_codes" value="13" id="brown">
+                            <label class="c-label" for="brown">brown</label>
+                        </li>
+                       </ul>
+                    </div>
+                </div>
                 <button id="magGlass" type="submit"><i class="fas fa-search fa-2x"></i></button>
             </form>
         </div>
