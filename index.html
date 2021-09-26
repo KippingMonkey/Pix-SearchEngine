@@ -15,25 +15,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="images/pb-favicon.png" />
-    <script src="functions.js" async defer></script>
+    <script src="functions.js" defer></script>
     <script src="https://kit.fontawesome.com/1bddcc1339.js" crossorigin="anonymous"></script>
     <title>Pixabay Searchengine</title>
 </head>
 <body>
     <main>
         <div class="search-container search-active">
-
             <div class="logo-container">
                 <img id="pb-logo" src="images/pb-logo-hor-light.png" alt="pixabay logo">
             </div>
-            <form class="toolbar-form">
-                <input type="search" name="searchfield" id="searchfield" class="toolbar" placeholder="Search...">
-                <button id="paintbrush" class="toolbar" type="menu"><i class="fas fa-paint-brush fa-2x"></i></button>
+            <form id="toolbar-form">
+                <input  id="searchfield" type="search" name="searchfield"  class="toolbar" placeholder="Search...">
+                <button id="paintbrush" type="menu" class="toolbar" ><i class="fas fa-paint-brush fa-2x"></i></button>
                 <button id="magGlass" type="submit"><i class="fas fa-search fa-2x"></i></button>
             </form>
         </div>
     </main>
-    <section class="gallery-container">
+
+    <template id="gallery-template" class="gallery-container">
         <figure>
             <a href="#" title="Random"></a>
             <img class="search-result" src="https://source.unsplash.com/random" alt="random photo">
@@ -94,11 +94,12 @@
             <figcaption class="tags">#:</figcaption>
             <figcaption class="photographer">Artist:</figcaption>
         </figure>
-       
-        
-    </section>
+    </template>
+    <section id="gallery"></section>
+
     <footer class="footer-container search-active">
         <p class="footer-text">Created by Johan and Jonas for educational purposes</p>
+        <p class="footer-text">Pictures retrieved from <a href="https://pixabay.com/sv/" target="_blank">Pixabay</a> using their API.</p>
     </footer>
 </body>
 </html>
