@@ -4,6 +4,11 @@ function getSearchResults(){
 
   form.onsubmit = async event => {
       event.preventDefault();
+      
+      document.getElementById('gallery').style.display = 'flex';
+      document.querySelector('.search-container').classList.add('search-active');
+      document.querySelector('.footer-container').classList.add('search-active');
+      
 
       //let searchFor = form.elements.namedItem("searchfield"); (=alternative way of typing)
       const searchFor = form.elements.searchfield.value;
