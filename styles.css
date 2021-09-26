@@ -1,9 +1,8 @@
+/* ==================== google fonts ====================== */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
-* {
-  box-sizing: border-box;
-}
 
+/* ==================== custom properties ====================== */
 :root {
   --color-darkgrey: #282828;
   --color-lightgrey: #bcbcbc;
@@ -12,12 +11,17 @@
   --ff-caption: "Amatic SC", cursive, sans-serif;
 }
 
+/* ==================== general settings ====================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
-
+/* ==================== search bar ====================== */
 .search-container {
   display: flex;
   flex-direction: column;
@@ -81,6 +85,8 @@ body {
     font-size: 1rem;
   }
 }
+
+/* ==================== gallery template ====================== */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -126,7 +132,7 @@ figure:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
-
+/* ==================== footer ====================== */
 .footer-container {
   display: flex;
   flex-direction: column;
@@ -146,7 +152,7 @@ figure:hover {
     font-size: 0.8rem;
   }
 }
-
+/* ==================== search active class ====================== */
 .search-container.search-active {
   flex-direction: row;
   justify-content: space-between;
