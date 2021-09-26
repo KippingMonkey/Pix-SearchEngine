@@ -118,9 +118,9 @@ figure img {
 }
 
 figure:hover {
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform: scale(1.5);
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
