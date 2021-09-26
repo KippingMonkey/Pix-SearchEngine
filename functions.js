@@ -12,11 +12,13 @@ function getSearchResults(){
 
       //let searchFor = form.elements.namedItem("searchfield"); (=alternative way of typing)
       const searchFor = form.elements.searchfield.value;
+      const color = document.querySelector('input[name="color_codes"]:checked').id;
       const apiKey = '23538954-f5928fdd584dadd6f32fceceb';
 
         const searchString = new URLSearchParams({
             key: apiKey,
             q: searchFor,
+            colors: color,
         });
       const response = await fetch('https://pixabay.com/api/?' + searchString);
       const searchResult = await response.json();
