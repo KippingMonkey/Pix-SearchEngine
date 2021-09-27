@@ -261,9 +261,6 @@ figure:active {
   height: 3.5rem;
   width: auto;
 }
-.footer-container.search-active {
-  width: 100%;
-}
 
 @media (max-width: 40rem) {
   .search-container.search-active {

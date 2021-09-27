@@ -6,7 +6,7 @@ const gallery = document.getElementById("gallery");
 function getSearchResults() {
   form.onsubmit = async (event) => {
     event.preventDefault();
-
+    gallery.replaceChildren();
     // document.getElementById("gallery").style.display = "flex";
     if (!searchContainer.classList.contains("search-active")) {
       !searchContainer.classList.add("search-active");
@@ -30,7 +30,16 @@ function getSearchResults() {
       throw new Error(message);
     }
     const searchResult = await response.json();
-    
+    const header = document.createElement("h2");
+    if(searchFor === ""){
+        header.textContent = "Search results:"
+    } else if (searchResult.totalHits > 0) {
+        header.textContent = `Search results for ${searchFor.toLowerCase()}`;
+    } else {
+        header.textContent = "No search results. Try another keyword";
+    }
+    gallery.appendChild(header);
+
     searchResult.hits.forEach(data => {
         gallery.appendChild(createFigure(data));
     });
