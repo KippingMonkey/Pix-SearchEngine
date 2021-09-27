@@ -29,6 +29,7 @@ function getSearchResults(){
       let figCap2 = document.querySelectorAll(".photographer");
       
       for (let i = 0; i < figures.length; i++) {
+          figures[i].style.display = 'inline-block';
           images[i].src = searchResult.hits[i].webformatURL;
           images[i].alt = searchResult.hits[i].tags;
           figCap1[i].innerHTML = `#: ${searchResult.hits[i].tags}`;

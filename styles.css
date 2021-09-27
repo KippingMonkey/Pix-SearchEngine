@@ -96,7 +96,7 @@ body {
 }
 figure {
   background: #ffffff;
-  display: inline-block;
+  display: none;
   margin: 0;
   padding: 10px 10px 10px;
   text-decoration: none;
@@ -139,9 +139,10 @@ figure:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   color: var(--color-lightgrey);
-  height: calc(100vh - 50px);
+  height: calc(100vh - 500px);
 }
 .footer-container a {
   text-decoration: none;
