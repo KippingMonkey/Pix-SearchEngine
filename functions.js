@@ -8,34 +8,34 @@ let pageNumber = 1;
 
 //Fetch data from API and display images
 async function getSearchResults() {
-    galleryContainer.replaceChildren();
-    if (!searchContainer.classList.contains("search-active")) {
-      !searchContainer.classList.add("search-active");
-    }
+  galleryContainer.replaceChildren();
+  if (!searchContainer.classList.contains("search-active")) {
+    !searchContainer.classList.add("search-active");
+  }
 
-    const searchValue = form.elements.searchfield.value;
-    const searchResult = await fetchData(pageNumber);
-    const maxPages = Math.ceil(searchResult.totalHits / 10);
-    const header = document.createElement("h2");
-    if (searchValue === "") {
-      header.textContent = `Search results(${searchResult.totalHits} images):`;
-    } else if (searchResult.totalHits > 0) {
-      header.textContent = `Search results for ${searchValue.toLowerCase()}(${searchResult.totalHits} images):`;
-    } else {
-      header.textContent = "No search results. Try another keyword";
-    }
-    galleryContainer.appendChild(header);
+  const searchValue = form.elements.searchfield.value;
+  const searchResult = await fetchData(pageNumber);
+  const maxPages = Math.ceil(searchResult.totalHits / 10);
+  const header = document.createElement("h2");
+  if (searchValue === "") {
+    header.textContent = `Search results(${searchResult.totalHits} images):`;
+  } else if (searchResult.totalHits > 0) {
+    header.textContent = `Search results for ${searchValue.toLowerCase()}(${
+      searchResult.totalHits
+    } images):`;
+  } else {
+    header.textContent = "No search results. Try another keyword";
+  }
+  galleryContainer.appendChild(header);
 
-
-    const gallery = document.createElement("div");
-    gallery.classList.add("gallery");
-    searchResult.hits.forEach((data) => {
-      gallery.appendChild(createFigure(data));
-    });
-    galleryContainer.appendChild(gallery);
-    galleryContainer.appendChild(createButtons(maxPages));
-  };
-
+  const gallery = document.createElement("div");
+  gallery.classList.add("gallery");
+  searchResult.hits.forEach((data) => {
+    gallery.appendChild(createFigure(data));
+  });
+  galleryContainer.appendChild(gallery);
+  galleryContainer.appendChild(createButtons(maxPages));
+}
 
 function createButtons(maxPages) {
   const btnContainer = document.createElement("div");
@@ -52,27 +52,27 @@ function createButtons(maxPages) {
   }
 
   backward.addEventListener("click", () => {
-      pageNumber--;
-      getSearchResults();
-    });
-    
-    const forward = document.createElement("button");
-    const iconForward = document.createElement("i");
-    iconForward.classList.add("fas", "fa-forward", "fa-2x");
-    forward.appendChild(iconForward);
-    if (pageNumber >= maxPages) {
-        forward.disabled = true;
-    } else {
-        forward.disabled = false;
-    }
-    
-    forward.addEventListener("click", () => {
-      pageNumber++;
-      getSearchResults();
-  })
+    pageNumber--;
+    getSearchResults();
+  });
 
-//   const currentPage = document.createElement("h3");
-//   currentPage.textContent = `${pageNumber}/${maxPages}`;
+  const forward = document.createElement("button");
+  const iconForward = document.createElement("i");
+  iconForward.classList.add("fas", "fa-forward", "fa-2x");
+  forward.appendChild(iconForward);
+  if (pageNumber >= maxPages) {
+    forward.disabled = true;
+  } else {
+    forward.disabled = false;
+  }
+
+  forward.addEventListener("click", () => {
+    pageNumber++;
+    getSearchResults();
+  });
+
+  //   const currentPage = document.createElement("h3");
+  //   currentPage.textContent = `${pageNumber}/${maxPages}`;
 
   const selectPage = document.createElement("select");
   const currentPageOption = document.createElement("option");
@@ -81,17 +81,17 @@ function createButtons(maxPages) {
   currentPageOption.selected = true;
   selectPage.appendChild(currentPageOption);
   for (let index = 1; index <= maxPages; index++) {
-      const option = document.createElement("option");
-      option.textContent = index;
-      option.value = index;
-      if (index !== pageNumber) {
-          selectPage.appendChild(option);
-      }
+    const option = document.createElement("option");
+    option.textContent = index;
+    option.value = index;
+    if (index !== pageNumber) {
+      selectPage.appendChild(option);
+    }
   }
   selectPage.addEventListener("change", () => {
-      pageNumber = selectPage.value;
-      getSearchResults();
-  })
+    pageNumber = selectPage.value;
+    getSearchResults();
+  });
 
   btnContainer.appendChild(backward);
   btnContainer.appendChild(selectPage);
@@ -147,11 +147,11 @@ function createFigure(data) {
 //Event handlers
 
 form.onsubmit = async (event) => {
-    pageNumber = 1;
-    event.preventDefault();
-    getSearchResults();
-}
+  pageNumber = 1;
+  event.preventDefault();
+  getSearchResults();
+};
 
 logoContainer.addEventListener("click", () => {
-    location.reload();
-})
+  location.reload();
+});

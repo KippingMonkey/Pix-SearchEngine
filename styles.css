@@ -1,5 +1,5 @@
 /* ==================== google fonts ====================== */
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Manrope:wght@200;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Manrope:wght@200;400;600&display=swap");
 /* ==================== custom properties ====================== */
 :root {
   --color-darkgrey: #282828;
@@ -77,7 +77,8 @@ body {
   font-size: 2rem;
 }
 
-#searchfield:focus, #searchfield:active {
+#searchfield:focus,
+#searchfield:active {
   outline: 0;
 }
 @media (max-width: 40rem) {
@@ -115,14 +116,11 @@ select {
 option[value=""] {
   color: black;
   background-color: white;
-  
 }
-
 
 option[value="grayscale"] {
   color: white;
   background-color: gray;
-  
 }
 
 option[value="transparent"] {
@@ -286,7 +284,6 @@ figure:active {
   text-decoration: underline;
 }
 
-
 @media (max-width: 40rem) {
   .footer-container a,
   footer {
@@ -330,4 +327,3 @@ figure:active {
     align-items: center;
   }
 }
-
