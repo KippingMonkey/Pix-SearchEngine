@@ -44,7 +44,7 @@ body {
   margin: 0.5rem 1rem;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 43rem) {
   .logo-container {
     display: flex;
     justify-content: center;
@@ -81,7 +81,7 @@ body {
 #searchfield:active {
   outline: 0;
 }
-@media (max-width: 40rem) {
+@media (max-width: 43rem) {
   #toolbar-form button {
     height: 2rem;
     width: 2rem;
@@ -90,6 +90,7 @@ body {
   #searchfield {
     height: 2rem;
     font-size: 1rem;
+    width: 8rem;
   }
 }
 
@@ -104,13 +105,20 @@ select {
 
   /* Custom styling */
   width: auto;
-  height: 3em;
-  padding: 0 1em;
+  height: 3rem;
+  padding: 0;
   border-radius: 3rem;
   border: 1px solid var(--color-darkgrey);
   color: var(--color-darkgrey);
   cursor: pointer;
   text-align: center;
+  font-size: 2rem;
+}
+@media (max-width: 43rem) {
+  select {
+    height: 2rem;
+    font-size: 1rem;
+  }
 }
 /* ==================== Option background color ====================== */
 option[value=""] {
@@ -284,7 +292,7 @@ figure:active {
   text-decoration: underline;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 43rem) {
   .footer-container a,
   footer {
     font-size: 0.8rem;
@@ -293,7 +301,7 @@ figure:active {
 /* ==================== search active class ====================== */
 .search-container.search-active {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   height: 4rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
@@ -304,7 +312,7 @@ figure:active {
   width: auto;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 43rem) {
   .search-container.search-active {
     flex-direction: column;
     align-items: center;
@@ -312,7 +320,7 @@ figure:active {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
   }
 }
-@media (max-width: 55rem) {
+@media (max-width: 65rem) {
   .search-container.search-active #searchfield {
     height: 2rem;
     font-size: 1rem;
@@ -325,5 +333,9 @@ figure:active {
   }
   .search-container.search-active {
     align-items: center;
+  }
+  .search-container.search-active select {
+    height: 2rem;
+    font-size: 1rem;
   }
 }

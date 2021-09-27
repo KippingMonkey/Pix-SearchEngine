@@ -6,7 +6,7 @@ const galleryContainer = document.getElementById("gallery-container");
 const logoContainer = document.getElementById("logo-container");
 let pageNumber = 1;
 
-//Fetch data from API and display images
+//Display images with API data, change layout and display number of hits
 async function getSearchResults() {
   galleryContainer.replaceChildren();
   if (!searchContainer.classList.contains("search-active")) {
@@ -37,6 +37,7 @@ async function getSearchResults() {
   galleryContainer.appendChild(createButtons(maxPages));
 }
 
+//Create forwards and backwards buttons and page counter
 function createButtons(maxPages) {
   const btnContainer = document.createElement("div");
   btnContainer.classList.add("btn-container");
@@ -100,6 +101,7 @@ function createButtons(maxPages) {
   return btnContainer;
 }
 
+//Fetch data from API
 async function fetchData(page) {
   const searchFor = form.elements.searchfield.value;
   const color = colorSelect.value;
@@ -121,6 +123,7 @@ async function fetchData(page) {
   return await response.json();
 }
 
+//Creates figures for gallery
 function createFigure(data) {
   const figure = document.createElement("figure");
   const hyperlink = document.createElement("a");
