@@ -18,13 +18,30 @@
 </head>
 <body>
     <main>
-        <div class="search-container">
+        <div class="search-container" id="search-container">
             <div class="logo-container">
-               <a href="https://pixabay.com/sv/" target="_blank"> <img id="pb-logo" src="images/pb-logo-hor-light.png" alt="pixabay logo"></a>
+              <img id="pb-logo" src="images/pb-logo-hor-light.png" alt="pixabay logo">
             </div>
             <form id="toolbar-form" autocomplete="off">
                 <input  id="searchfield" type="search" name="searchfield"  class="toolbar" placeholder="Search...">
-                <div class="dropdown-container">
+                <select id="color-select">
+                    <option value=""  disabled selected>Select color</option>
+                    <option value="">Any color</option>
+                    <option value="grayscale">grayscale</option>
+                    <option value="transparent">transparent</option>
+                    <option value="red">red</option>
+                    <option value="orange">orange</option>
+                    <option value="green">green</option>
+                    <option value="turqouise">turqouise</option>
+                    <option value="blue">blue</option>
+                    <option value="lilac">lilac</option>
+                    <option value="pink">pink</option>
+                    <option value="white">white</option>
+                    <option value="gray">gray</option>
+                    <option value="black">black</option>
+                    <option value="brown">brown</option>
+                  </select>
+                <!-- <div class="dropdown-container">
                     <button id="paintbrush" class="toolbar" type="menu"><i class="fas fa-paint-brush fa-2x"></i></button>
                     <div id="dropdown-menu" class="dropdown-content">
                        <ul id="color-list">
@@ -86,7 +103,7 @@
                         </li>
                        </ul>
                     </div>
-                </div>
+                </div> -->
                 <button id="magGlass" type="submit"><i class="fas fa-search fa-2x"></i></button>
             </form>
         </div>

@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 6rem);
 }
 
 .logo-container img {
@@ -86,6 +86,99 @@ body {
   }
 }
 
+/* ==================== Color picker ====================== */
+select {
+  /* Clears browser standard */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font: inherit;
+
+  /* Custom styling */
+  width: 8em;
+  height: 3em;
+  padding: 0 1em;
+  border-radius: 3rem;
+  border: 1px solid var(--color-lightgrey);
+  color: var(--color-lightgrey);
+  cursor: pointer;
+}
+/* ==================== Option background color ====================== */
+option[value="0"] {
+  color: black;
+  background-color: white;
+  
+}
+
+
+option[value="1"] {
+  color: white;
+  background-color: gray;
+  
+}
+
+option[value="2"] {
+  color: black;
+  background-color: white;
+}
+
+option[value="3"] {
+  color: white;
+  background-color: red;
+}
+
+option[value="4"] {
+  color: white;
+  background-color: orange;
+}
+
+option[value="5"] {
+  color: white;
+  background-color: green;
+}
+
+option[value="6"] {
+  color: white;
+  background-color: turquoise;
+}
+
+option[value="7"] {
+  color: white;
+  background-color: blue;
+}
+
+option[value="8"] {
+  color: white;
+  background-color: purple;
+}
+
+option[value="9"] {
+  color: white;
+  background-color: pink;
+}
+
+option[value="10"] {
+  color: black;
+  background-color: white;
+}
+
+option[value="11"] {
+  color: white;
+  background-color: gray;
+}
+
+option[value="12"] {
+  color: white;
+  background-color: black;
+}
+
+option[value="13"] {
+  color: white;
+  background-color: brown;
+}
+
+
 /* ==================== gallery template ====================== */
 .gallery-container {
   display: flex;
@@ -132,7 +225,8 @@ figure:active {
   z-index: 2;
 }
 #gallery {
-  display: none;
+  display: flex;
+  margin: 0;
 }
 /* ==================== footer ====================== */
 .footer-container {
@@ -140,9 +234,9 @@ figure:active {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 6rem;
 
   color: var(--color-lightgrey);
-  height: calc(100vh - 500px);
 }
 .footer-container a {
   text-decoration: none;
