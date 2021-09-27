@@ -60,9 +60,9 @@ body {
 #toolbar-form button {
   height: 3rem;
   width: 3rem;
-  border: 1px solid var(--color-lightgrey);
+  border: 1px solid var(--color-darkgrey);
   border-radius: 50%;
-  color: var(--color-lightgrey);
+  color: var(--color-darkgrey);
   background-color: #fff;
   flex-shrink: 0;
 }
@@ -71,7 +71,7 @@ body {
   height: 3rem;
   width: auto;
   flex-grow: 1;
-  border: 1px solid var(--color-lightgrey);
+  border: 1px solid var(--color-darkgrey);
   border-radius: 3rem;
   padding: 0 1rem;
   font-size: 2rem;
@@ -98,84 +98,84 @@ select {
   font: inherit;
 
   /* Custom styling */
-  width: 8em;
+  width: auto;
   height: 3em;
   padding: 0 1em;
   border-radius: 3rem;
-  border: 1px solid var(--color-lightgrey);
-  color: var(--color-lightgrey);
+  border: 1px solid var(--color-darkgrey);
+  color: var(--color-darkgrey);
   cursor: pointer;
 }
 /* ==================== Option background color ====================== */
-option[value="0"] {
+option[value=""] {
   color: black;
   background-color: white;
   
 }
 
 
-option[value="1"] {
+option[value="grayscale"] {
   color: white;
   background-color: gray;
   
 }
 
-option[value="2"] {
+option[value="transparent"] {
   color: black;
   background-color: white;
 }
 
-option[value="3"] {
+option[value="red"] {
   color: white;
   background-color: red;
 }
 
-option[value="4"] {
+option[value="orange"] {
   color: white;
   background-color: orange;
 }
 
-option[value="5"] {
+option[value="green"] {
   color: white;
   background-color: green;
 }
 
-option[value="6"] {
+option[value="turquoise"] {
   color: white;
   background-color: turquoise;
 }
 
-option[value="7"] {
+option[value="blue"] {
   color: white;
   background-color: blue;
 }
 
-option[value="8"] {
+option[value="lilac"] {
   color: white;
   background-color: purple;
 }
 
-option[value="9"] {
+option[value="pink"] {
   color: white;
   background-color: pink;
 }
 
-option[value="10"] {
+option[value="white"] {
   color: black;
   background-color: white;
 }
 
-option[value="11"] {
+option[value="gray"] {
   color: white;
   background-color: gray;
 }
 
-option[value="12"] {
+option[value="black"] {
   color: white;
   background-color: black;
 }
 
-option[value="13"] {
+option[value="brown"] {
   color: white;
   background-color: brown;
 }
@@ -188,7 +188,7 @@ option[value="13"] {
 }
 
 .gallery-container {
-  color: var(--color-lightgrey);
+  color: var(--color-darkgrey);
 }
 
 /* ==================== button container ====================== */
@@ -199,16 +199,22 @@ option[value="13"] {
 }
 
 .btn-container button {
+  cursor: pointer;
   height: 3rem;
   width: 3rem;
-  border: 1px solid var(--color-lightgrey);
+  border: 1px solid var(--color-darkgrey);
   border-radius: 50%;
-  color: var(--color-lightgrey);
+  color: var(--color-darkgrey);
   background-color: #fff;
   flex-shrink: 0;
 }
 
 .btn-container h3 {
+  color: var(--color-darkgrey);
+}
+
+.btn-container button:disabled {
+  border: 1px solid var(--color-lightgrey);
   color: var(--color-lightgrey);
 }
 
@@ -246,7 +252,7 @@ figcaption {
 figure img {
   display: block;
   height: 200px;
-  outline: 1px solid var(--color-lightgrey);
+  outline: 1px solid var(--color-darkgrey);
 }
 
 figure:active {
@@ -326,7 +332,7 @@ figure:active {
   display: none;
   position: absolute;
   background-color: white;
-  border: 1px solid var(--color-lightgrey);
+  border: 1px solid var(--color-darkgrey);
   width: 200%;
   right: -60%;
   padding: 0;

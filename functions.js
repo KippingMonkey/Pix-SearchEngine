@@ -60,7 +60,7 @@ function createButtons(maxPages) {
     const iconForward = document.createElement("i");
     iconForward.classList.add("fas", "fa-forward", "fa-2x");
     forward.appendChild(iconForward);
-    if (pageNumber === maxPages) {
+    if (pageNumber >= maxPages) {
         forward.disabled = true;
     } else {
         forward.disabled = false;
@@ -75,14 +75,18 @@ function createButtons(maxPages) {
 //   currentPage.textContent = `${pageNumber}/${maxPages}`;
 
   const selectPage = document.createElement("select");
-  for (let index = 1; index < maxPages; index++) {
+  const currentPageOption = document.createElement("option");
+  currentPageOption.textContent = pageNumber;
+  currentPageOption.value = pageNumber;
+  currentPageOption.selected = true;
+  selectPage.appendChild(currentPageOption);
+  for (let index = 1; index <= maxPages; index++) {
       const option = document.createElement("option");
       option.textContent = index;
       option.value = index;
-      if (index === pageNumber) {
-          option.selected = true;
+      if (index !== pageNumber) {
+          selectPage.appendChild(option);
       }
-      selectPage.appendChild(option);
   }
   selectPage.addEventListener("change", () => {
       pageNumber = selectPage.value;
