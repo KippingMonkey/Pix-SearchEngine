@@ -28,6 +28,10 @@ body {
   height: calc(100vh - 6rem);
 }
 
+.logo-container:hover {
+  cursor: pointer;
+}
+
 .logo-container img {
   width: 40rem;
   height: auto;

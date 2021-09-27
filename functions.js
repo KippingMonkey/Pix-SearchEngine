@@ -3,6 +3,7 @@ const form = document.getElementById("toolbar-form");
 const searchContainer = document.getElementById("search-container");
 const colorSelect = document.getElementById("color-select");
 const galleryContainer = document.getElementById("gallery-container");
+const logoContainer = document.getElementById("logo-container");
 let pageNumber = 1;
 
 //Fetch data from API and display images
@@ -70,11 +71,26 @@ function createButtons(maxPages) {
       getSearchResults();
   })
 
-  const currentPage = document.createElement("h3");
-  currentPage.textContent = `${pageNumber}/${maxPages}`;
+//   const currentPage = document.createElement("h3");
+//   currentPage.textContent = `${pageNumber}/${maxPages}`;
+
+  const selectPage = document.createElement("select");
+  for (let index = 1; index < maxPages; index++) {
+      const option = document.createElement("option");
+      option.textContent = index;
+      option.value = index;
+      if (index === pageNumber) {
+          option.selected = true;
+      }
+      selectPage.appendChild(option);
+  }
+  selectPage.addEventListener("change", () => {
+      pageNumber = selectPage.value;
+      getSearchResults();
+  })
 
   btnContainer.appendChild(backward);
-  btnContainer.appendChild(currentPage);
+  btnContainer.appendChild(selectPage);
   btnContainer.appendChild(forward);
 
   return btnContainer;
@@ -124,8 +140,14 @@ function createFigure(data) {
   return figure;
 }
 
+//Event handlers
+
 form.onsubmit = async (event) => {
     pageNumber = 1;
     event.preventDefault();
     getSearchResults();
 }
+
+logoContainer.addEventListener("click", () => {
+    location.reload();
+})
