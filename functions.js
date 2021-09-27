@@ -5,7 +5,6 @@ const colorSelect = document.getElementById("color-select");
 const galleryContainer = document.getElementById("gallery-container");
 const logoContainer = document.getElementById("logo-container");
 let pageNumber = 1;
-getSearchResults();
 
 //Fetch data from API and display images
 async function getSearchResults() {
