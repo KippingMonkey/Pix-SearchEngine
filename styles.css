@@ -19,6 +19,12 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
+h2 {
+  font-size: 1rem;
+  color: var(--color-darkgrey);
+  margin-top: 2rem;
+}
+
 /* ==================== search bar ====================== */
 .search-container {
   display: flex;
@@ -104,7 +110,7 @@ select {
   font: inherit;
 
   /* Custom styling */
-  width: auto;
+  width: 3rem;
   height: 3rem;
   padding: 0;
   border-radius: 3rem;
@@ -112,12 +118,17 @@ select {
   color: var(--color-darkgrey);
   cursor: pointer;
   text-align: center;
+}
+#color-select {
+  padding-top: 0.4rem;
+  width: auto;
   font-size: 2rem;
 }
 @media (max-width: 43rem) {
-  select {
+  #color-select {
     height: 2rem;
     font-size: 1rem;
+    padding-top: 0.2rem;
   }
 }
 /* ==================== Option background color ====================== */
