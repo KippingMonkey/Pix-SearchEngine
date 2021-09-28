@@ -120,7 +120,6 @@ select {
   text-align: center;
 }
 #color-select {
-  padding-top: 0.4rem;
   width: auto;
   font-size: 2rem;
 }
@@ -128,7 +127,6 @@ select {
   #color-select {
     height: 2rem;
     font-size: 1rem;
-    padding-top: 0.2rem;
   }
 }
 /* ==================== Option background color ====================== */
