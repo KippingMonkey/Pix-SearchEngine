@@ -8,14 +8,18 @@ let pageNumber = 1;
 
 //Display images with API data, change layout and display number of hits
 async function getSearchResults() {
+  // Empty gallery before new search
   galleryContainer.replaceChildren();
+
+  // Add search-active class if first search
   if (!searchContainer.classList.contains("search-active")) {
     !searchContainer.classList.add("search-active");
   }
-
-  const searchValue = form.elements.searchfield.value;
+  //fetch data from API
   const searchResult = await fetchData(pageNumber);
-  const maxPages = Math.ceil(searchResult.totalHits / 10);
+  const searchValue = form.elements.searchfield.value;
+
+  // Add header with relevant textContent
   const header = document.createElement("h2");
   if (searchValue === "") {
     header.textContent = `Search results(${searchResult.totalHits} images):`;
@@ -27,21 +31,26 @@ async function getSearchResults() {
     header.textContent = "No search results. Try another keyword";
   }
   galleryContainer.appendChild(header);
-
+  
+  //Creates new gallery and add figures from fetched data
   const gallery = document.createElement("div");
   gallery.classList.add("gallery");
   searchResult.hits.forEach((data) => {
     gallery.appendChild(createFigure(data));
   });
   galleryContainer.appendChild(gallery);
+
+  //Add navigation buttons
+  const maxPages = Math.ceil(searchResult.totalHits / 10);
   galleryContainer.appendChild(createButtons(maxPages));
 }
 
-//Create forwards and backwards buttons and page counter
+//Create forwards and backwards buttons and pagenavigator
 function createButtons(maxPages) {
   const btnContainer = document.createElement("div");
   btnContainer.classList.add("btn-container");
 
+  // Backward button
   const backward = document.createElement("button");
   const iconBack = document.createElement("i");
   iconBack.classList.add("fas", "fa-backward", "fa-2x");
@@ -51,12 +60,12 @@ function createButtons(maxPages) {
   } else {
     backward.disabled = false;
   }
-
   backward.addEventListener("click", () => {
     pageNumber--;
     getSearchResults();
   });
 
+  // Forward button
   const forward = document.createElement("button");
   const iconForward = document.createElement("i");
   iconForward.classList.add("fas", "fa-forward", "fa-2x");
@@ -72,9 +81,7 @@ function createButtons(maxPages) {
     getSearchResults();
   });
 
-  //   const currentPage = document.createElement("h3");
-  //   currentPage.textContent = `${pageNumber}/${maxPages}`;
-
+  // Select page with dropdown
   const selectPage = document.createElement("select");
   const currentPageOption = document.createElement("option");
   currentPageOption.textContent = pageNumber;
@@ -94,6 +101,7 @@ function createButtons(maxPages) {
     getSearchResults();
   });
 
+  //Append in correct order
   btnContainer.appendChild(backward);
   btnContainer.appendChild(selectPage);
   btnContainer.appendChild(forward);
@@ -128,27 +136,26 @@ function createFigure(data) {
   const figure = document.createElement("figure");
   const hyperlink = document.createElement("a");
   const image = document.createElement("img");
-  const tags = document.createElement("figcaption");
-  const photographer = document.createElement("figcaption");
+  const figcaption = document.createElement("figcaption");
+  figcaption.setAttribute('style', 'white-space: pre;');
 
   figure.style.display = "inline-block";
   image.src = data.webformatURL;
   image.alt = data.tags;
-  tags.textContent = `#: ${data.tags}`;
-  photographer.textContent = `User: ${data.user}`;
+  figcaption.textContent = `#: ${data.tags} \r\n`;
+  figcaption.textContent += `User: ${data.user}`;
   hyperlink.href = data.webformatURL;
   hyperlink.target = "_blank";
 
   image.appendChild(hyperlink);
   figure.appendChild(image);
-  figure.appendChild(tags);
-  figure.appendChild(photographer);
+  figure.appendChild(figcaption)
 
   return figure;
 }
 
-//Event handlers
 
+//Event handlers
 form.onsubmit = async (event) => {
   pageNumber = 1;
   event.preventDefault();
