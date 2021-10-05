@@ -5,6 +5,8 @@ const colorSelect = document.getElementById("color-select");
 const galleryContainer = document.getElementById("gallery-container");
 const logoContainer = document.getElementById("logo-container");
 let pageNumber = 1;
+let searchTerm = "";
+let color = "";
 
 //Display images with API data, change layout and display number of hits
 async function getSearchResults() {
@@ -17,14 +19,13 @@ async function getSearchResults() {
   }
   //fetch data from API
   const searchResult = await fetchData(pageNumber);
-  const searchValue = form.elements.searchfield.value;
 
   // Add header with relevant textContent
   const header = document.createElement("h2");
-  if (searchValue === "") {
+  if (searchTerm === "") {
     header.textContent = `Search results(${searchResult.totalHits} images):`;
   } else if (searchResult.totalHits > 0) {
-    header.textContent = `Search results for ${searchValue.toLowerCase()}(${
+    header.textContent = `Search results for ${searchTerm}(${
       searchResult.totalHits
     } images):`;
   } else {
@@ -111,13 +112,11 @@ function createButtons(maxPages) {
 
 //Fetch data from API
 async function fetchData(page) {
-  const searchFor = form.elements.searchfield.value;
-  const color = colorSelect.value;
   const apiKey = "23538954-f5928fdd584dadd6f32fceceb";
 
   const searchString = new URLSearchParams({
     key: apiKey,
-    q: searchFor,
+    q: searchTerm,
     colors: color,
     per_page: 10,
     page: page,
@@ -159,6 +158,8 @@ function createFigure(data) {
 form.onsubmit = async (event) => {
   pageNumber = 1;
   event.preventDefault();
+  searchTerm = form.elements.searchfield.value.toLowerCase();
+  color = colorSelect.value;
   getSearchResults();
 };
 
