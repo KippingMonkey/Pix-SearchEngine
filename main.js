@@ -6,11 +6,12 @@ const galleryContainer = document.getElementById("gallery-container");
 const logoContainer = document.getElementById("logo-container");
 
 const searchfield = document.getElementById("searchfield");
+const color = document.getElementById("color-select");
 
 let pageNumber = 1;
 
 //Display images with API data, change layout and display number of hits
-async function getSearchResults(searchValue) {
+async function getSearchResults(searchValue, color) {
   // Empty gallery before new search
   galleryContainer.replaceChildren();
 
@@ -19,7 +20,7 @@ async function getSearchResults(searchValue) {
     !searchContainer.classList.add("search-active");
   }
   //fetch data from API
-  const searchResult = await fetchData(pageNumber, searchValue);
+  const searchResult = await fetchData(pageNumber, searchValue, color);
   // const searchValue = form.elements.searchfield.value;
 
   // Add header with relevant textContent
@@ -45,11 +46,11 @@ async function getSearchResults(searchValue) {
 
   //Add navigation buttons
   const maxPages = Math.ceil(searchResult.totalHits / 10);
-  galleryContainer.appendChild(createButtons(maxPages, searchValue));
+  galleryContainer.appendChild(createButtons(maxPages, searchValue, color));
 }
 
 //Create forwards and backwards buttons and pagenavigator
-function createButtons(maxPages, searchValue) {
+function createButtons(maxPages, searchValue, color) {
   const btnContainer = document.createElement("div");
   btnContainer.classList.add("btn-container");
 
@@ -65,7 +66,7 @@ function createButtons(maxPages, searchValue) {
   }
   backward.addEventListener("click", () => {
     pageNumber--;
-    getSearchResults(searchValue);
+    getSearchResults(searchValue, color);
   });
 
   // Forward button
@@ -81,7 +82,7 @@ function createButtons(maxPages, searchValue) {
 
   forward.addEventListener("click", () => {
     pageNumber++;
-    getSearchResults(searchValue);
+    getSearchResults(searchValue, color);
   });
 
   // Select page with dropdown
@@ -101,7 +102,7 @@ function createButtons(maxPages, searchValue) {
   }
   selectPage.addEventListener("change", () => {
     pageNumber = selectPage.value;
-    getSearchResults(searchValue);
+    getSearchResults(searchValue, color);
   });
 
   //Append in correct order
@@ -113,7 +114,7 @@ function createButtons(maxPages, searchValue) {
 }
 
 //Fetch data from API
-async function fetchData(page, searchWords) {
+async function fetchData(page, searchWords, searchColor) {
   // const searchFor = form.elements.searchfield.value;
   const color = colorSelect.value;
   const apiKey = "23538954-f5928fdd584dadd6f32fceceb";
@@ -121,7 +122,7 @@ async function fetchData(page, searchWords) {
   const searchString = new URLSearchParams({
     key: apiKey,
     q: searchWords,
-    colors: color,
+    colors: searchColor,
     per_page: 10,
     page: page,
   });
@@ -161,7 +162,7 @@ function createFigure(data) {
 form.onsubmit = async (event) => {
   pageNumber = 1;
   event.preventDefault();
-  getSearchResults(searchfield.value);
+  getSearchResults(searchfield.value, color.value);
 };
 
 logoContainer.addEventListener("click", () => {
